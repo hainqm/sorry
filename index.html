@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Ngăn cuộn trang */
+            background-color: #36BA98;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #F4A261;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.2s ease, top 0.2s ease, left 0.2s ease;
+        }
+        button:hover {
+            background-color: #E76F51;
+        }
+     
+        .agree{
+            margin-bottom: 90px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .sorry{
+            position: relative;
+            bottom: 200px;
+            background-color:#E9C46A;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 10px 15px #5f4401;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="sorry">Cho toi xin lỗi mà <br>Lần sau không thế nữa <br>Bảo j cũng nghe</div>
+    
+        <button class="agree"><a href="./hi.html">Lần này tha cho</a></button> <br>
+        <button class="deny" id="randomButton">Khônggg</button>
+    
+
+    <script>
+        const button = document.getElementById('randomButton');
+
+        button.addEventListener('mouseover', () => {
+            // Lấy chiều cao và chiều rộng của cửa sổ trình duyệt
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Tạo vị trí ngẫu nhiên trong khoảng cho phép
+            const randomX = Math.random() * (windowWidth - button.offsetWidth);
+            const randomY = Math.random() * (windowHeight - button.offsetHeight);
+
+            // Di chuyển nút đến vị trí mới
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
